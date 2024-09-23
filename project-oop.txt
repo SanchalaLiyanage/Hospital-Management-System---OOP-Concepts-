@@ -1,0 +1,988 @@
+import java.util.Scanner;
+
+
+class Patient
+{
+	ClearConsole c2=new ClearConsole();
+    public String name, age, address, blood, admit,ward;
+
+	
+    public void enterPatientDetails()
+	{
+		
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("ENTER PATIENT'S NAME:");
+        name = scanner.nextLine();
+		
+		c2.clearConsole();
+
+        System.out.println("ENTER PATIENT AGE:");
+        age = scanner.nextLine();
+		
+		c2.clearConsole();
+
+        System.out.println("ENTER PATIENT'S ADDRESS:");
+        address = scanner.nextLine();
+		
+		c2.clearConsole();
+		
+    }
+	public void displayPatientDetails()
+	{
+		
+		System.out.println("----------------------------------------------------------------------------------------------------------");
+		System.out.println("\n\n\n");
+		System.out.println("			    	   ----------------				");
+        System.out.println("		    		  | Patient Details |		");
+		System.out.println("			    	   ----------------		");
+		System.out.println("\n");
+        System.out.println("	Name				:   "+name);
+        System.out.println("	Age				:   "+age);
+        System.out.println("	Address				:   "+address);
+    
+		
+	}
+}
+
+
+
+class Inpatient extends Patient 
+{
+		
+		
+		Gurdians gurdian = new Gurdians();
+		
+		
+	
+    public void enterInpatientdetails() 
+	{
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("ENTER PATIENT'S BLOOD GROUP:");
+        blood = scanner.nextLine();
+		
+		c2.clearConsole();
+
+        System.out.println("ENTER PATIENT'S ADMITTED DATE:");
+        admit = scanner.nextLine();
+		
+		c2.clearConsole();
+		
+		
+		gurdian.gurdianDetails();
+			
+    }
+	
+
+	
+	 public void displayInpatientDetails() 
+	 {
+		 
+        System.out.println("	Blood Group			:   " +blood);
+        System.out.println("	Admitted Date			:   "+admit);
+		
+		gurdian.displayGuardianDetails();
+		
+    }
+	  
+	
+}
+
+
+
+class Gurdians
+{
+	
+	public String gname,gage,gaddress;
+	Scanner scanner = new Scanner(System.in);
+	ClearConsole c2=new ClearConsole();
+	
+	
+
+	public void gurdianDetails()
+	{
+		
+		System.out.println("ENTER PATIENT'S GUARDIANS NAME:");
+        gname = scanner.nextLine();
+		
+		c2.clearConsole();
+		
+		System.out.println("ENTER PATIENT'S GUARDIANS AGE:");
+        gage = scanner.nextLine();
+		
+		c2.clearConsole();
+		
+		System.out.println("ENTER PATIENT'S GUARDIANS ADDRESS:");
+        gaddress = scanner.nextLine();
+		
+		c2.clearConsole();
+		
+	}
+	
+	
+	
+	 public void displayGuardianDetails()
+	 {
+		 
+		System.out.println("                                               ");
+		System.out.println("       ----------------						");
+		System.out.println("       Guardian Details						");
+		System.out.println("       ----------------						");
+		System.out.println("                                               ");
+      
+	  
+		System.out.println("	Guardian Name			:   "+gname) ;
+        System.out.println("	Guardian Age			:   "+gage);
+        System.out.println("	Guardian Address		:   "+gaddress);
+		System.out.println("\n\n\n");
+		System.out.println("----------------------------------------------------------------------------------------------------------");
+   
+   }
+   
+   
+}
+
+
+
+class Outpatient extends Patient
+ {
+	
+	public String num8;
+	 public int num11;
+	 
+	 
+	 
+    public void enterOutpatientDetails() 
+	
+	{
+		
+        Scanner scanner = new Scanner(System.in);
+
+					do
+					{
+						
+						System.out.println("WHO IS THE DOCTOR YOU WANT MEET");
+						System.out.println("\n\n");
+						
+						System.out.println("1- Dr. Michael Clark");
+						System.out.println("2- Dr. Angela Jayawardana");
+						System.out.println("3- Dr. Russell Stevens");
+						System.out.println("4- Dr. Patricia Emmanuel");
+						System.out.println("5- Andrew Patel");
+						System.out.println("6- Dr. Laura Smith");
+						System.out.println("7- Dr. John Brown");
+						System.out.println("8- Dr. Emily Davis");
+						System.out.println("9- Dr. Daniel Wilson");
+						System.out.println("10- Dr. Olivia Johnson");		
+						num11 = scanner.nextInt();
+						
+						
+						switch (num11) 
+						{
+							
+							case 1:
+							
+							{
+								num8="Dr. Michael Clark;";
+								break;
+							}
+							
+							case 2:
+							
+							{
+								num8="Dr. Angela Jayawardana";
+								break;
+							}
+							
+							case 3:
+							
+							{
+								num8="Dr. Russell Stevens";
+								break;
+							}
+							
+							case 4:
+							
+							{
+								num8="Dr. Patricia Emmanuel";
+								break;
+							}
+							
+							case 5:
+							
+							{
+								num8="Andrew Patel";
+								break;
+							}
+							
+							case 6:
+							
+							{
+								num8="Dr. Laura Smith";
+								break;
+							}
+							
+							case 7:
+							
+							{
+								num8="Dr. John Brown";
+								break;
+							}
+							
+							case 8:
+							
+							{
+								num8="Emily Davis";
+								break;
+							}
+							
+							case 9:
+							{
+								num8="Daniel Wilson";
+								break;
+							}
+							
+							case 10:
+							
+							{
+								num8="Olivia Johnson";
+								break;
+							}
+
+							
+							
+							default:
+								
+												System.out.println("INVALID INPUT\n PLEASE TRY AGAING"); 
+												num11=0;
+												
+												
+												break;
+							}
+					}
+						while(num11 == 0);
+						
+						
+						
+							
+    }
+	public void displayOutpatientDetails() 
+	{
+        System.out.println("\n");
+        System.out.println("	Apointted Doctor		: "+num8 );
+		System.out.println("\n\n\n");
+		System.out.println("----------------------------------------------------------------------------------------------------------");
+    }
+}
+
+
+
+class Doctor
+{
+	public String dname,experience,speciality;
+	int dage;
+	
+	Scanner scanner2 = new Scanner(System.in);
+	
+		
+		public Doctor(String dname,int dage,String experience,String speciality)
+		{
+			this.dname = dname;
+			this.dage = dage;
+			this.experience = experience;
+			this.speciality = speciality;
+		
+		}
+		
+		
+		 public void displayDoctorInfo() 
+		 {
+				System.out.println("----------------------------------------------------------------------------------------------------------");
+				System.out.println("\n\n\n");
+				System.out.println("			    	   ----------------				");
+				System.out.println("		    		  | Doctor Details |		");
+				System.out.println("			    	   ----------------		");
+				System.out.println("\n");
+				System.out.println("	Doctor Name				:   "+dname);
+				System.out.println("	Doctor Age				:   "+dage);
+				System.out.println("	Doctor Speciality			:   "+speciality);
+				System.out.println("	Doctor Experience			:   "+experience);
+				System.out.println("\n\n\n");
+				System.out.println("----------------------------------------------------------------------------------------------------------");
+		 }
+    
+	
+}
+
+
+class Nurse
+{
+    public String nname,experience,naddress;
+    public int nage;
+
+
+    public Nurse(String nname, int nage, String experience,String naddress)
+	{
+        this.nname = nname;
+        this.nage = nage;
+        this.experience = experience;
+		this.naddress=naddress;
+		
+    }
+		
+    public void displayNurseInfo() 
+	{
+        System.out.println("----------------------------------------------------------------------------------------------------------");
+		System.out.println("\n\n\n");
+		System.out.println("			    	   ----------------				");
+        System.out.println("		    		  | Nurse Details |		");
+		System.out.println("			    	   ----------------		");
+		System.out.println("\n");
+        System.out.println("	Nurse Name				:   "+nname);
+        System.out.println("	Nurse Age				:   "+nage);
+        System.out.println("	Nurse Address				:   "+naddress);
+		System.out.println("	Nurse Experience			:   "+experience);
+		System.out.println("\n\n\n");
+		 System.out.println("----------------------------------------------------------------------------------------------------------");
+		
+    }
+}
+
+
+
+class Ward
+{
+	public String wardName,wardNumber,wspeciality;
+	public Doctor incharge;
+	public MinnorStaff worker1,worker2;
+	public Nurse nurse1,nurse2;
+	
+
+	
+	  public Ward(String wardName, String wardNumber, String wspeciality, Doctor incharge,Nurse nurse1,Nurse nurse2 ,MinnorStaff worker1, MinnorStaff worker2)
+		{
+			this.wardName = wardName;
+			this.wardNumber = wardNumber;
+			this.wspeciality = wspeciality;
+			this.incharge = incharge;
+			this.nurse1=nurse1;
+			this.nurse2=nurse2;
+			this.worker1 = worker1;
+			this.worker2 = worker2;
+		}
+		public void displayWardInfo()
+		{
+			
+				System.out.println("----------------------------------------------------------------------------------------------------------");
+				System.out.println("\n\n\n");
+				System.out.println("			    	   ----------------				");
+				System.out.println("		    		  | Ward Details |		");
+				System.out.println("			    	   ----------------		");
+				System.out.println("\n");
+				System.out.println("	Ward Name		:   " + wardName);
+				System.out.println("	Ward Number		:   " + wardNumber);
+				System.out.println("	Speciality		:   " + wspeciality);
+				System.out.println("	Incharge		:   " + incharge.dname);
+				System.out.println("	Incharge		:   " + incharge.experience);
+				System.out.println("                                               ");
+				System.out.println("	------------------						");
+				System.out.println("	Ward Nurse Details						");
+				System.out.println("	------------------						");
+				System.out.println("                                               ");
+				System.out.println("	Nurse 1		:   " + nurse1.nname);
+				System.out.println("	Nurse 1		:   " + nurse1.experience); 
+				System.out.println("	Nurse 2		:   " + nurse2.nname); 
+				System.out.println("	Nurse 2		:   " + nurse2.experience);		
+				System.out.println("                                               ");
+				System.out.println("	--------------------						");
+				System.out.println("	Minnor Staff Details						");
+				System.out.println("	--------------------						");
+				System.out.println("                                               ");		
+				System.out.println("	Worker 1		:   " + worker1.mName); 
+				System.out.println("	Worker 2		:   " + worker2.mName);
+				System.out.println("\n\n\n");	
+				System.out.println("----------------------------------------------------------------------------------------------------------");
+			
+		
+    }
+		
+}	
+
+
+
+class MinnorStaff
+{
+	public String mName,mAge,mAdderess;
+	
+	public MinnorStaff(String mName,String mAge,String mAdderess)
+	
+	{
+		this.mName=mName;
+		this.mAge=mAge;
+		this.mAdderess=mAdderess;
+	}
+	    
+	public void displayMinnorStaffInfo()
+	
+	{
+		
+        System.out.println("----------------------------------------------------------------------------------------------------------");
+		System.out.println("\n\n\n");
+		System.out.println("			    	   ----------------				");
+        System.out.println("		    		  | Employee Details |		");
+		System.out.println("			    	   ----------------		");
+		System.out.println("\n");
+        System.out.println("	Employee Name				:   "+mName);
+        System.out.println("	Employee Age				:   "+mAge);
+        System.out.println("	Employee Address			:   "+mAdderess);
+		System.out.println("\n\n\n");
+		System.out.println("----------------------------------------------------------------------------------------------------------");
+       
+	 }
+}
+
+
+
+ class ClearConsole 
+ {
+    public static void clearConsole() 
+	{
+        try
+		{
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows"))
+				{
+                // For Windows
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+				} 
+			else 
+			{
+                // For Unix-based systems (Linux, macOS)
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
+        } 
+		catch (Exception e) 
+		{
+            // Handle exceptions
+            e.printStackTrace();
+        }
+    }
+}
+	
+	// clearConsole();
+
+
+class MedHospitalTest
+ {
+	 public Ward ward1,ward2,ward3,ward4,ward5,ward6,ward7,ward8,ward9,ward10;
+    public static void main(String[] args) 
+	{
+		Scanner scanner1 = new Scanner(System.in);
+		ClearConsole c1=new ClearConsole();
+		
+	   //Objects
+	
+		
+		Doctor doctor1 = new Doctor("Dr. Michael Clark", 42, "18 years", "Cardiology");
+        Doctor doctor2 = new Doctor("Dr. Angela Jayawardana", 37, "11 years", "Dermatology");
+        Doctor doctor3 = new Doctor("Dr. Russell Stevens", 48, "22 years", "Oncology");
+        Doctor doctor4 = new Doctor("Dr. Patricia Emmanuel", 53, "27 years", "Pediatrics");
+        Doctor doctor5 = new Doctor("Dr. Andrew Patel", 41, "15 years", "Orthopedics");
+        Doctor doctor6 = new Doctor("Dr. Laura Smith", 45, "20 years", "Neurology");
+        Doctor doctor7 = new Doctor("Dr. John Brown", 39, "13 years", "Gastroenterology");
+        Doctor doctor8 = new Doctor("Dr. Emily Davis", 47, "21 years", "Ophthalmology");
+        Doctor doctor9 = new Doctor("Dr. Daniel Wilson", 50, "24 years", "ENT");
+        Doctor doctor10 = new Doctor("Dr. Olivia Johnson", 36, "10 years", "Cardiothoracic Surgery");
+		Doctor doctor11 = new Doctor("Dr. Karen White", 44, "19 years", "Pulmonology");
+		Doctor doctor12 = new Doctor("Dr. Rohan Perera", 38, "14 years", "Dentistry");
+		Doctor doctor13 = new Doctor("Dr. Sarah Smithson", 51, "25 years", "Psychiatry");
+		Doctor doctor14 = new Doctor("Dr. Christopher Brown", 54, "28 years", "Urology");
+		Doctor doctor15 = new Doctor("Dr. Linda Johnson", 40, "16 years", "Hematology");
+		Doctor doctor16 = new Doctor("Dr. Matthew Taylor", 43, "17 years", "Nephrology");
+		Doctor doctor17 = new Doctor("Dr. Anna Martinez", 46, "22 years", "Obstetrics");
+		Doctor doctor18 = new Doctor("Dr. James Williams", 49, "23 years", "General Surgery");
+		Doctor doctor19 = new Doctor("Dr. Elizabeth Davis", 52, "26 years", "Rehabilitation Medicine");
+		Doctor doctor20 = new Doctor("Dr. William Turner", 37, "12 years", "Radiology");
+		
+
+		
+		Nurse nurse1 = new Nurse("Amanda Smith", 28, "5 years", "456 Hilltop Avenue, Colombo");
+		Nurse nurse2 = new Nurse("Samantha Johnson", 25, "3 years", "789 Lake Road, Kandy");
+		Nurse nurse3 = new Nurse("Nayani Perera", 32, "8 years", "123 Palm Street, Galle");
+		Nurse nurse4 = new Nurse("Chathuri Fernando", 30, "6 years", "101 Sunflower Lane, Negombo");
+		Nurse nurse5 = new Nurse("Kavindi Silva", 27, "4 years", "555 Maple Street, Anuradhapura");
+		Nurse nurse6 = new Nurse("Hansika Gunawardana", 35, "9 years", "222 River View Road, Kurunegala");
+		Nurse nurse7 = new Nurse("Tharindu Bandara", 29, "7 years", "777 Pine Avenue, Badulla");
+		Nurse nurse8 =  new Nurse("Nethmi Jayasuriya", 26, "4 years", "444 Oak Lane, Panadura");
+		Nurse nurse9 = new Nurse("Madushani Rajapakse", 31, "8 years", "333 Forest Road, Kegalle");
+		Nurse nurse10 = new Nurse("Malsha Wijesinghe", 33, "6 years", "666 Rose Street, Gampaha");
+		Nurse nurse11 = new Nurse("Lahiru Bandara", 29, "6 years", "888 Cedar Lane, Matara");
+		Nurse nurse12 = new Nurse("Dilani Jayawardena", 27, "5 years", "999 Pine Street, Ratnapura");
+		Nurse nurse13 = new Nurse("Ranjith Perera", 34, "9 years", "555 Rose Avenue, Hambantota");
+		Nurse nurse14 = new Nurse("Thilini Gunaratne", 28, "7 years", "777 Elm Road, Kalutara");
+		Nurse nurse15 = new Nurse("Kusal Wijewardena", 30, "8 years", "123 Oak Lane, Trincomalee");
+		Nurse nurse16 = new Nurse("Madushanka Fernando", 31, "7 years", "666 Lake View Road, Jaffna");
+		Nurse nurse17 = new Nurse("Gayani Silva", 26, "4 years", "111 Sunflower Street, Batticaloa");
+		Nurse nurse18 = new Nurse("Saman Bandara", 32, "9 years", "222 River Road, Polonnaruwa");
+		Nurse nurse19 = new Nurse("Nimesh Jayasuriya", 29, "6 years", "333 Pine Avenue, Mannar");
+		Nurse nurse20 = new Nurse("Dulani Rajapakse", 33, "8 years", "444 Forest Lane, Puttalam");
+
+
+
+        MinnorStaff staff1 = new MinnorStaff("Kamal Perera", "25", "Colombo");
+        MinnorStaff staff2 = new MinnorStaff("Nimal Silva", "30", "Kandy");
+        MinnorStaff staff3 = new MinnorStaff("Samantha Rajapakse", "22", "Galle");
+        MinnorStaff staff4 = new MinnorStaff("Chandani Fernando", "28", "Negombo");
+        MinnorStaff staff5 = new MinnorStaff("Ranjan Jayasuriya", "26", "Anuradhapura");
+        MinnorStaff staff6 = new MinnorStaff("Lakshman Perera", "28", "Kurunegala");
+        MinnorStaff staff7 = new MinnorStaff("Mala Silva", "24", "Badulla");
+        MinnorStaff staff8 = new MinnorStaff("Sunil Rajapakse", "31", "Panadura");
+        MinnorStaff staff9 = new MinnorStaff("Sarala Fernando", "26", "Kegalle");
+        MinnorStaff staff10 = new MinnorStaff("Roshan Jayasuriya", "29", "Gampaha");
+		MinnorStaff staff11 = new MinnorStaff("Aruna Perera", "23", "Matara");
+		MinnorStaff staff12 = new MinnorStaff("Shanika Silva", "27", "Ratnapura");
+		MinnorStaff staff13 = new MinnorStaff("Dinesh Rajapakse", "25", "Hambantota");
+		MinnorStaff staff14 = new MinnorStaff("Dilani Fernando", "29", "Kalutara");
+		MinnorStaff staff15 = new MinnorStaff("Nuwan Jayasuriya", "32", "Trincomalee");
+		MinnorStaff staff16 = new MinnorStaff("Malathi Perera", "26", "Jaffna");
+		MinnorStaff staff17 = new MinnorStaff("Harsha Silva", "28", "Batticaloa");
+		MinnorStaff staff18 = new MinnorStaff("Sampath Rajapakse", "30", "Polonnaruwa");
+		MinnorStaff staff19 = new MinnorStaff("Kumari Fernando", "31", "Mannar");
+		MinnorStaff staff20 = new MinnorStaff("Ranil Jayasuriya", "24", "Puttalam");
+
+
+
+        Ward ward1 = new Ward("Cardiac Ward", "Ward 101", "Cardiology", doctor1, nurse1, nurse2, staff1, staff2);
+		Ward ward2 = new Ward("Dermatology Ward", "Ward 102", "Dermatology", doctor2, nurse2, nurse3, staff3, staff4);
+		Ward ward3 = new Ward("Oncology Ward", "Ward 103", "Oncology", doctor3, nurse3, nurse4, staff5, staff6);
+		Ward ward4 = new Ward("Pediatrics Ward", "Ward 104", "Pediatrics", doctor4, nurse4, nurse5, staff7, staff8);
+		Ward ward5 = new Ward("Orthopedic Ward", "Ward 105", "Orthopedics", doctor5, nurse5, nurse6, staff9, staff10);
+		Ward ward6 = new Ward("Neurology Ward", "Ward 106", "Neurology", doctor6, nurse6, nurse7, staff1, staff2);
+		Ward ward7 = new Ward("Gastro Ward", "Ward 107", "Gastroenterology", doctor7, nurse7, nurse8, staff3, staff4);
+		Ward ward8 = new Ward("Eye Ward", "Ward 108", "Ophthalmology", doctor8, nurse8, nurse9, staff5, staff6);
+		Ward ward9 = new Ward("ENT Ward", "Ward 109", "ENT", doctor9, nurse9, nurse10, staff7, staff8);
+		Ward ward10 = new Ward("Cardio Ward", "Ward 110", "Cardiothoracic Surgery", doctor10, nurse10, nurse1, staff9, staff10);
+		Ward ward11 = new Ward("Pulmonology Ward", "Ward 111", "Pulmonology", doctor11, nurse11, nurse12, staff11, staff12);
+		Ward ward12 = new Ward("Dental Ward", "Ward 112", "Dentistry", doctor12, nurse12, nurse13, staff13, staff14);
+		Ward ward13 = new Ward("Psychiatry Ward", "Ward 113", "Psychiatry", doctor13, nurse13, nurse14, staff15, staff16);
+		Ward ward14 = new Ward("Urology Ward", "Ward 114", "Urology", doctor14, nurse14, nurse15, staff17, staff18);
+		Ward ward15 = new Ward("Hematology Ward", "Ward 115", "Hematology", doctor15, nurse15, nurse16, staff19, staff20);
+		Ward ward16 = new Ward("Dialysis Ward", "Ward 116", "Nephrology", doctor16, nurse16, nurse17, staff11, staff12);
+		Ward ward17 = new Ward("Obstetrics Ward", "Ward 117", "Obstetrics", doctor17, nurse17, nurse18, staff13, staff14);
+		Ward ward18 = new Ward("Surgical Ward", "Ward 118", "General Surgery", doctor18, nurse18, nurse19, staff15, staff16);
+		Ward ward19 = new Ward("Rehabilitation Ward", "Ward 119", "Physical Therapy", doctor19, nurse19, nurse20, staff17, staff18);
+		Ward ward20 = new Ward("Radiology Ward", "Ward 120", "Radiology", doctor20, nurse20, nurse1, staff19, staff20);
+
+		
+
+		
+		
+	  
+	   //Ask
+		int num1;
+		
+		do
+		{
+			System.out.println("WHAT DO YOU WANT TO DO?");
+			System.out.println("1 - ADMIT PATIENTS");
+			System.out.println("2 - VIEW DOCTOR DETAILS");
+			System.out.println("3 - VIEW NURSE DETAILS");
+			System.out.println("4 - VIEW MINOR STAFF DETAILS");
+			System.out.println("5 - VIEW WARD DETAILS");
+			System.out.println("6 - EXIT");
+
+			num1 = scanner1.nextInt();
+			
+			c1.clearConsole();
+			
+			
+			switch (num1) 
+			{
+				case 1:// Handle patient admission
+				{
+					
+					
+								int num2;
+								do
+								{
+									
+									System.out.println("ENTER PATIENT'S TYPE? \n 1).INPATIENT  2).OUTPATIENT");
+									System.out.println("3). EXIT");
+									num2 = scanner1.nextInt();
+									c1.clearConsole();
+									
+									
+											if(num2 == 1)
+												{
+													Inpatient inpatient = new Inpatient();
+													inpatient.enterPatientDetails();
+													inpatient.enterInpatientdetails();
+													c1.clearConsole();
+													inpatient.displayPatientDetails();
+													inpatient.displayInpatientDetails();
+													
+													
+												}
+											
+										   else if(num2 == 2)
+											{
+											   Outpatient outpatient=new Outpatient();
+											   outpatient.enterPatientDetails();
+											   outpatient.enterOutpatientDetails();
+											   c1.clearConsole();
+											   outpatient.displayPatientDetails();
+											   outpatient.displayOutpatientDetails();
+											   
+											}
+										   
+										   else if(num2 == 3)
+										   {
+											   Final();
+										   }
+										   else
+										   {
+												System.out.println("INVALID INPUT\n PLEASE TRY AGAING"); 
+												num2=0;
+												c1.clearConsole();
+												
+										   }
+								}
+							   while (num2 != 1 && num2 != 2 && num2 !=3);
+							   
+							
+							
+										break;
+				}
+				case 2:// Handle viewing doctor details
+				{
+					
+					int num3;
+					do 
+					{
+						System.out.println("WHICH DOCTOR'S DETAILS DO YOU WANT TO KNOW? (ENTER NUMBER)");
+						System.out.println("1- Dr. Michael Clark");
+						System.out.println("2- Dr. Angela Jayawardana");
+						System.out.println("3- Dr. Russell Stevens");
+						System.out.println("4- Dr. Patricia Emmanuel");
+						System.out.println("5- Andrew Patel");
+						System.out.println("6- Dr. Laura Smith");
+						System.out.println("7- Dr. John Brown");
+						System.out.println("8- Dr. Emily Davis");
+						System.out.println("9- Dr. Daniel Wilson");
+						System.out.println("10- Dr. Olivia Johnson");
+						System.out.println("11- EXIT");
+					
+						num3 = scanner1.nextInt();
+						c1.clearConsole();
+
+						switch (num3) 
+						{
+							case 1:
+								doctor1.displayDoctorInfo();
+								break;
+							case 2:
+								doctor2.displayDoctorInfo();
+								break;
+							case 3:
+								doctor3.displayDoctorInfo();
+								break;
+							case 4:
+								doctor4.displayDoctorInfo();
+								break;
+							case 5:
+								doctor5.displayDoctorInfo();
+								break;
+							case 6:
+								doctor6.displayDoctorInfo();
+								break;
+							case 7:
+								doctor7.displayDoctorInfo();
+								break;
+							case 8:
+								doctor8.displayDoctorInfo();
+								break;
+							case 9:
+								doctor9.displayDoctorInfo();
+								break;
+							case 10:
+								doctor10.displayDoctorInfo();
+								break;
+							
+							case 11:
+								
+								Final();
+								break;
+							default:
+								
+												System.out.println("INVALID INPUT\n PLEASE TRY AGAING"); 
+												num3=0;
+												c1.clearConsole();
+												
+												break;
+						}
+					}
+					while (num3 != 1 && num3 != 2 && num3 !=3 && num3 != 4 && num3 !=5 && num3 != 6 && num3 !=7 && num3 != 8 && num3 !=9 && num3 != 10 && num3 !=11 );
+				
+					break;
+				
+				}
+				case 3:// Handle viewing nurse details 
+				{
+					
+					int num7;
+					do {
+							System.out.println("WHICH NURSE'S DETAILS DO YOU WANT TO KNOW? (ENTER NUMBER)");
+							System.out.println("");
+							System.out.println("1- Amanda Smith");
+							System.out.println("2- Samantha Johnson");
+							System.out.println("3- Nayani Perera");
+							System.out.println("4- Chathuri Fernando");
+							System.out.println("5- Kavindi Silva");
+							System.out.println("6- Hansika Gunawardana");
+							System.out.println("7- Tharindu Bandara");
+							System.out.println("8- Nethmi Jayasuriya");
+							System.out.println("9- Madushani Rajapakse");
+							System.out.println("10- Malsha Wijesinghe");
+							System.out.println("11- EXIT");
+							
+
+							num7 = scanner1.nextInt();
+							
+							c1.clearConsole();
+							
+							
+							scanner1.nextLine(); 
+							
+								switch (num7)
+								{
+									case 1:
+										nurse1.displayNurseInfo();
+										break;
+									case 2:
+										nurse2.displayNurseInfo();
+										break;
+									case 3:
+										nurse3.displayNurseInfo();
+										break;
+									case 4:
+										nurse4.displayNurseInfo();
+										break;
+									case 5:
+										nurse5.displayNurseInfo();
+										break;
+									case 6:
+										nurse6.displayNurseInfo();
+										break;
+									case 7:
+										nurse7.displayNurseInfo();
+										break;
+									case 8:
+										nurse8.displayNurseInfo();
+										break;
+									case 9:
+										nurse9.displayNurseInfo();
+										break;
+									case 10:
+										nurse10.displayNurseInfo();
+										break;
+									case 11:
+											Final();
+											break;
+										default:
+											
+												System.out.println("INVALID INPUT\n PLEASE TRY AGAING"); 
+												num7=0;
+												c1.clearConsole();
+															
+												break;
+								}
+						}
+					while (num7 != 1 && num7 != 2 && num7 !=3 && num7 != 4 && num7 !=5 && num7 != 6 && num7 !=7 && num7 != 8 && num7 !=9 && num7 != 10 && num7 !=11 );
+					
+					break;
+				}
+				case 4:// Handle viewing MinnorStaff details
+				{
+					int num4;
+					do
+					{
+						System.out.println("WHICH MINOR STAFF'S DETAILS DO YOU WANT TO KNOW? (ENTER NUMBER)");
+						System.out.println("1- Kamal Perera");
+						System.out.println("2- Nimal Silva");
+						System.out.println("3- Samantha Rajapakse");
+						System.out.println("4- Chandani Fernando");
+						System.out.println("5- Ranjan Jayasuriya");
+						System.out.println("6- Lakshman Perera");
+						System.out.println("7- Mala Silva");
+						System.out.println("8- Sunil Rajapakse");
+						System.out.println("9- Sarala Fernando");
+						System.out.println("10- Roshan Jayasuriya");
+						System.out.println("11- BACK");
+						System.out.println("12- EXIT");
+
+						num4 = scanner1.nextInt();
+						
+						c1.clearConsole();
+
+						switch (num4) 
+						{
+							case 1:
+								staff1.displayMinnorStaffInfo();
+								break;
+							case 2:
+								staff2.displayMinnorStaffInfo();
+								break;
+							case 3:
+								staff3.displayMinnorStaffInfo();
+								break;
+							case 4:
+								staff4.displayMinnorStaffInfo();
+								break;
+							case 5:
+								staff5.displayMinnorStaffInfo();
+								break;
+							case 6:
+								staff6.displayMinnorStaffInfo();
+								break;
+							case 7:
+								staff7.displayMinnorStaffInfo();
+								break;
+							case 8:
+								staff8.displayMinnorStaffInfo();
+								break;
+							case 9:
+								staff9.displayMinnorStaffInfo();
+								break;
+							case 10:
+								staff10.displayMinnorStaffInfo();
+							
+							case 11:
+								Final();
+								break;
+							default:
+								System.out.println("INVALID INPUT\n PLEASE TRY AGAING"); 
+												num4=0;
+												c1.clearConsole();
+												
+												break;
+						}
+					}
+					while (num4 != 1 && num4 != 2 && num4 !=3 && num4 != 4 && num4 !=5 && num4 != 6 && num4 !=7 && num4 != 8 && num4 !=9 && num4 != 10 && num4 !=11 );
+					
+					break;
+				}
+				case 5:// Handle viewing Ward details
+				{
+					int num6;
+					do
+					{
+
+						System.out.println("WHICH WARD'S DETAILS DO YOU WANT TO KNOW? (ENTER NUMBER)");
+						System.out.println("1- Cardiac Ward");
+						System.out.println("2- Dermatology Ward");
+						System.out.println("3- Oncology Ward");
+						System.out.println("4- Pediatrics Ward");
+						System.out.println("5- Orthopedic Ward");
+						System.out.println("6- Neurology Ward");
+						System.out.println("7- Gastro Ward");
+						System.out.println("8- Eye Ward");
+						System.out.println("9- ENT Ward");
+						System.out.println("10- Cardio Ward");
+						System.out.println("11- BACK");
+						System.out.println("12- EXIT");
+
+						num6 = scanner1.nextInt();
+						
+						c1.clearConsole();
+
+						switch (num6) {
+							case 1:
+								ward1.displayWardInfo();
+								break;
+							case 2:
+								ward2.displayWardInfo();
+								break;
+							case 3:
+								ward3.displayWardInfo();
+								break;
+							case 4:
+								ward4.displayWardInfo();
+								break;
+							case 5:
+								ward5.displayWardInfo();
+								break;
+							case 6:
+								ward6.displayWardInfo();
+								break;
+							case 7:
+								ward7.displayWardInfo();
+								break;
+							case 8:
+								ward8.displayWardInfo();
+								break;
+							case 9:
+								ward9.displayWardInfo();
+								break;
+							case 10:
+								ward10.displayWardInfo();
+								break;
+							case 11:
+								Final();
+								break;
+							
+							default:
+								System.out.println("Invalid input");
+								System.out.println("INVALID INPUT\n PLEASE TRY AGAING"); 
+								num6=0;
+								c1.clearConsole();
+												
+								break;
+						}
+					}
+					while (num6 != 1 && num6 != 2 && num6 !=3 && num6 != 4 && num6 !=5 && num6 != 6 && num6 !=7 && num6 != 8 && num6 !=9 && num6 != 10 && num6 !=11 );
+				
+					break;
+				}
+				case 6:// Handle the "EXIT" option
+				{
+					
+					Final();
+					
+					break;
+				}
+				default:
+				{
+								System.out.println("Invalid input");
+								System.out.println("INVALID INPUT\n PLEASE TRY AGAING"); 
+								num1=0;
+								c1.clearConsole();
+												
+								break;
+				}
+			}
+		}
+					while (num1 != 1 && num1 != 2 && num1 !=3 && num1 != 4 && num1 !=5 && num1 != 6   );
+	}
+	
+	
+	public static void Final()
+	{
+				ClearConsole c3=new ClearConsole();
+				c3.clearConsole();
+				System.out.println("\n\n\n");
+				System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
+				System.out.println("\n\n\n");
+				System.out.println("					  Thank you!!!");
+				System.out.println("					Have aNice Day!!!");
+				System.out.println("\n\n\n");
+				System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
+				System.out.println("\n\n\n");
+		
+	}
+    
+}
+
+		
